@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <!--For Annotation config-->
+       <context:component-scan base-package="com.chandan"/> <!--Package name not class name for base-package-->
+     <!--XML based beans-->
+    <bean id="vehicleCar" class="com.chandan.Car"/>
+   <bean id="vehicle" class="com.chandan.Bike"/>
+    <bean id="tyre" class="com.chandan.Tyre">
+        <!--Field injection-->
+        <!--<property name="brand" value="MRF"/>-->
+        <!--Constructor injection-->
+        <constructor-arg value="MRF"/>
+    </bean>
+    <bean id="engine" class="com.chandan.Engine"/>
+</beans>
